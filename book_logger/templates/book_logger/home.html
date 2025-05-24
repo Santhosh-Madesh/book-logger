@@ -24,7 +24,10 @@
   </div>
 </nav>
     {% block content %}
-    <h1>Content of the home page</h1>
+    <p>{{title}} by {{author}}<br>
+      Your rating : {{rating}}/5<br>
+      Your review : {{review}}
+    </p>
     {% endblock content %}
 </body>
 </html>
