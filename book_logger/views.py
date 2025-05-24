@@ -4,7 +4,14 @@ from .form import BookForm
 from .models import book
 
 def home(request):
-    return render(request,"book_logger/home.html")
+    data = book.objects.get(pk=1)
+    data = {
+        'title':data.title,
+        'author':data.author,
+        'review':data.review,
+        'rating':data.rating,
+    }
+    return render(request,"book_logger/home.html",data)
 
 def add(request):
     if request.method == "POST":
@@ -21,4 +28,5 @@ def add(request):
     return render(request,"book_logger/add.html",{'form':form})
 
 def about(request):
-    return render(request,"")
+
+    return render(request,"book_logger/about.html")
