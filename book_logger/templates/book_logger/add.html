@@ -1,9 +1,18 @@
 {% extends 'book_logger/home.html' %}
 {% block title %}Creation Page{% endblock title %}
-{% block content %}
-    <form action="{% url 'add' %}" method="post">
-        {% csrf_token %}
-        {{form}}
-        <input type="submit" value="Submit">
-    </form>
-{% endblock content %}
+
+
+    {% block content %}
+        {% if form %}
+        <form action="{% url 'add' %}" method="post">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Submit">
+        </form>
+        {% else %}
+            {{data}}
+            <p>Wanna add a new book? <a href="{% url 'add' %}">add</a></p>
+        {% endif %}
+    {% endblock content %}
+
+    
