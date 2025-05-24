@@ -5,3 +5,6 @@ def home(request):
 
 def add(request):
     return render(request,"book_logger/add.html")
+
+def about(request):
+    return render(request,"")
