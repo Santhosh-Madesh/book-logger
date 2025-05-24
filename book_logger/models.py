@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class book(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100,null=False)
     author = models.CharField(max_length=50)
     review = models.CharField()
     rating = models.IntegerField()

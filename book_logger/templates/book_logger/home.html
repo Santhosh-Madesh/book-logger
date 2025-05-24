@@ -24,10 +24,15 @@
   </div>
 </nav>
     {% block content %}
-    <p>{{title}} by {{author}}<br>
-      Your rating : {{rating}}/5<br>
-      Your review : {{review}}
-    </p>
+    <!-- Need some working on the logic here -->
+      {% for element in data %}
+      <p>
+        {{element.Title}} by {{element.Author}}<br>
+        Your review : {{element.Review}}<br>
+        Your rating : {{element.Rating}}/5<br>
+      </p>
+      {% endfor %}
     {% endblock content %}
+
 </body>
 </html>
